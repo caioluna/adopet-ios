@@ -38,7 +38,7 @@ class SignUpViewController: UIViewController {
 	private lazy var signUpLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "Ainda não tem cadastro? Então, antes de buscar seu melhor amigo, precisamos de alguns dados:"
+		label.text = Constants.hasNoAccount
 		label.font = .init(name: "Poppins", size: 16)
 		label.numberOfLines = 0
 		label.textColor = UIColor(named: "ColorBlue")
@@ -46,114 +46,33 @@ class SignUpViewController: UIViewController {
 		return label
 	}()
 	
-	private lazy var nameLabel: UILabel = {
-		let label = UILabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "Nome"
-		label.font = .init(name: "Poppins", size: 16)
-		label.numberOfLines = 0
-		label.textColor = UIColor(named: "ColorGray")
-		return label
+	private lazy var nameInputField: LabeledTextField = {
+		return LabeledTextField(title: Constants.nameLabel, placeholder: "Digite seu nome completo")
 	}()
 	
-	private lazy var nameTextField: UITextField = {
-		let textField = UITextField()
-		textField.translatesAutoresizingMaskIntoConstraints = false
-		textField.placeholder = "Digite seu nome completo"
-		textField.font = .init(name: "Poppins", size: 16)
-		textField.backgroundColor = UIColor(named: "ColorLightGray")
-		textField.layer.cornerRadius = 8
-		textField.layer.shadowOffset = .init(width: 0, height: 2)
-		textField.layer.shadowOpacity = 0.25
-		textField.layer.shadowColor = UIColor(named: "ColorGray")?.cgColor
-		textField.layer.shadowRadius = 0
-		textField.setLeftPaddingPoints(15)
-		return textField
+	private lazy var emailInputField: LabeledTextField = {
+		let inputField = LabeledTextField(title: Constants.emailLabel, placeholder: "Escolha seu melhor email")
+		inputField.textField.addTarget(self, action: #selector(textFieldChanging(_:)), for: .editingChanged)
+		inputField.textField.keyboardType = .emailAddress
+		return inputField
 	}()
 	
-	private lazy var emailLabel: UILabel = {
-		let label = UILabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "Email"
-		label.font = .init(name: "Poppins", size: 16)
-		label.numberOfLines = 0
-		label.textColor = UIColor(named: "ColorGray")
-		return label
+	private lazy var phoneInputField: LabeledTextField = {
+		let inputField = LabeledTextField(title: Constants.phoneLabel, placeholder: "Insira seu telefone/whatsapp")
+		inputField.textField.keyboardType = .phonePad
+		return inputField
 	}()
 	
-	private lazy var emailTextField: UITextField = {
-		let textField = UITextField()
-		textField.translatesAutoresizingMaskIntoConstraints = false
-		textField.placeholder = "Escolha seu melhor email"
-		textField.font = .init(name: "Poppins", size: 16)
-		textField.backgroundColor = UIColor(named: "ColorLightGray")
-		textField.layer.cornerRadius = 8
-		textField.layer.shadowOffset = .init(width: 0, height: 2)
-		textField.layer.shadowOpacity = 0.25
-		textField.layer.shadowColor = UIColor(named: "ColorGray")?.cgColor
-		textField.layer.shadowRadius = 0
-		textField.setLeftPaddingPoints(15)
-		textField.addTarget(self, action: #selector(textFieldChanging(_:)), for: .editingChanged)
-		return textField
-	}()
-	
-	private lazy var telefoneLabel: UILabel = {
-		let label = UILabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "Telefone com DDD"
-		label.font = .init(name: "Poppins", size: 16)
-		label.numberOfLines = 0
-		label.textColor = UIColor(named: "ColorGray")
-		return label
-	}()
-	
-	private lazy var phoneNumberTextField: UITextField = {
-		let textField = UITextField()
-		textField.translatesAutoresizingMaskIntoConstraints = false
-		textField.placeholder = "Insira seu telefone/whatsapp"
-		textField.font = .init(name: "Poppins", size: 16)
-		textField.backgroundColor = UIColor(named: "ColorLightGray")
-		textField.layer.cornerRadius = 8
-		textField.layer.shadowOffset = .init(width: 0, height: 2)
-		textField.layer.shadowOpacity = 0.25
-		textField.layer.shadowColor = UIColor(named: "ColorGray")?.cgColor
-		textField.layer.shadowRadius = 0
-		textField.setLeftPaddingPoints(15)
-		return textField
-	}()
-	
-	private lazy var passwordLabel: UILabel = {
-		let label = UILabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "Senha"
-		label.font = .init(name: "Poppins", size: 16)
-		label.numberOfLines = 0
-		label.textColor = UIColor(named: "ColorGray")
-		return label
-	}()
-	
-	private lazy var passwordTextField: UITextField = {
-		let textField = UITextField()
-		textField.translatesAutoresizingMaskIntoConstraints = false
-		textField.placeholder = "Crie uma senha"
-		textField.font = .init(name: "Poppins", size: 16)
-		textField.backgroundColor = UIColor(named: "ColorLightGray")
-		textField.layer.cornerRadius = 8
-		textField.layer.shadowOffset = .init(width: 0, height: 2)
-		textField.layer.shadowOpacity = 0.25
-		textField.layer.shadowColor = UIColor(named: "ColorGray")?.cgColor
-		textField.layer.shadowRadius = 0
-		textField.isSecureTextEntry = true
-		textField.setLeftPaddingPoints(15)
-		return textField
+	private lazy var passwordInputField: LabeledTextField = {
+		return LabeledTextField(title: Constants.passwordLabel, placeholder: "Crie uma senha", isSecureTextEntry: true)
 	}()
 	
 	private lazy var stackView: UIStackView = {
-		let stack = UIStackView(arrangedSubviews: [nameLabel, nameTextField, emailLabel, emailTextField, telefoneLabel, phoneNumberTextField, passwordLabel, passwordTextField])
+		let stack = UIStackView(arrangedSubviews: [nameInputField, emailInputField, phoneInputField, passwordInputField])
 		stack.translatesAutoresizingMaskIntoConstraints = false
 		stack.alignment = .fill
 		stack.distribution = .equalSpacing
-		stack.spacing = 16
+		stack.spacing = LayoutConstants.viewSpacing
 		stack.axis = .vertical
 		return stack
 	}()
@@ -161,10 +80,10 @@ class SignUpViewController: UIViewController {
 	private lazy var signUpButton: UIButton = {
 		let button = UIButton()
 		button.translatesAutoresizingMaskIntoConstraints = false
-		button.setTitle("Cadastrar", for: .normal)
+		button.setTitle(Constants.signUpButtonTitle, for: .normal)
 		button.backgroundColor = UIColor(named: "ColorCoral")
 		button.titleLabel?.font = .init(name: "Poppins-Bold", size: 18)
-		button.layer.cornerRadius = 8
+		button.layer.cornerRadius = LayoutConstants.buttonCornerRadius
 		button.addTarget(self, action: #selector(didTapSignUpButton), for: .touchUpInside)
 		return button
 	}()
@@ -225,31 +144,26 @@ class SignUpViewController: UIViewController {
 			signUpLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 64),
 			signUpLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -64),
 			
-			stackView.topAnchor.constraint(equalTo: signUpLabel.bottomAnchor, constant: 32),
-			stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 32),
-			stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -32),
-			
-			nameTextField.heightAnchor.constraint(equalToConstant: 48),
-			phoneNumberTextField.heightAnchor.constraint(equalToConstant: 48),
-			emailTextField.heightAnchor.constraint(equalToConstant: 48),
-			passwordTextField.heightAnchor.constraint(equalToConstant: 48),
+			stackView.topAnchor.constraint(equalTo: signUpLabel.bottomAnchor, constant: LayoutConstants.standardMargin),
+			stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: LayoutConstants.standardMargin),
+			stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -LayoutConstants.standardMargin),
 			
 			signUpButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 88),
 			signUpButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -88),
-			signUpButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 32),
-			signUpButton.heightAnchor.constraint(equalToConstant: 48),
+			signUpButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: LayoutConstants.standardMargin),
+			signUpButton.heightAnchor.constraint(equalToConstant: LayoutConstants.buttonHeight),
 			
-			signUpButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -32)
+			signUpButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -LayoutConstants.standardMargin)
 		])
 	}
 	
 	@objc
 	func didTapSignUpButton() {
 		
-		guard let name = nameTextField.text,
-					let email = emailTextField.text,
-					let phoneNumber = phoneNumberTextField.text,
-					let password =  passwordTextField.text else { return }
+		guard let name = nameInputField.textField.text,
+					let email = emailInputField.textField.text,
+					let phoneNumber = phoneInputField.textField.text,
+					let password =  passwordInputField.textField.text else { return }
 		
 		let userData = CreateUserAccountModel(name: name, email: email, phoneNumber: phoneNumber, password: password)
 		
@@ -260,12 +174,12 @@ class SignUpViewController: UIViewController {
 	
 	@objc
 	func textFieldChanging(_ textField: UITextField) {
-		guard let txt = textField.text else {
+		guard let text = textField.text else {
 			textField.layer.borderColor = UIColor.red.cgColor
 			textField.layer.borderWidth = 1.0
 			return
 		}
-		if txt.contains("@") {
+		if text.contains("@") {
 			textField.layer.borderColor = UIColor.clear.cgColor
 			textField.layer.borderWidth = 0.0
 		} else {

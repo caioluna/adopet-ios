@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -108,6 +108,11 @@
 		48EDD0E82B7D6E9A00CB6228 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		FE7515DB2E91A3E000268255 /* CreateUserAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserAccountModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		FEF80B802E91C39C003866B3 /* Components */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Components; sourceTree = "<group>"; };
+		FEF80B832E91CCE8003866B3 /* Utils */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Utils; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		48A900C92B79786F0057616A /* Frameworks */ = {
@@ -242,6 +247,8 @@
 		48A900CE2B79786F0057616A /* Adopet */ = {
 			isa = PBXGroup;
 			children = (
+				FEF80B832E91CCE8003866B3 /* Utils */,
+				FEF80B802E91C39C003866B3 /* Components */,
 				48514CF92B88CABB0021AE7E /* Services */,
 				48514CF82B88CAAD0021AE7E /* PetDetails */,
 				48514CF72B88CA830021AE7E /* Extensions */,
@@ -324,6 +331,10 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				FEF80B802E91C39C003866B3 /* Components */,
+				FEF80B832E91CCE8003866B3 /* Utils */,
 			);
 			name = Adopet;
 			productName = Adopet;

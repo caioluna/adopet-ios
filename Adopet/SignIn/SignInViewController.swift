@@ -37,7 +37,7 @@ class SignInViewController: UIViewController {
 	private lazy var subtitleLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "Já tem conta? Faça seu login:"
+		label.text = Constants.hasAccount
 		label.font = .init(name: "Poppins", size: 16)
 		label.numberOfLines = 0
 		label.textAlignment = .center
@@ -45,61 +45,18 @@ class SignInViewController: UIViewController {
 		return label
 	}()
 	
-	private lazy var emailLabel: UILabel = {
-		let label = UILabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "Email"
-		label.font = .init(name: "Poppins", size: 16)
-		label.numberOfLines = 0
-		label.textAlignment = .center
-		label.textColor = UIColor(named: "ColorGray")
-		return label
+	private lazy var emailInputField: LabeledTextField = {
+		let inputField = LabeledTextField(title: Constants.emailLabel, placeholder: "Insira seu email")
+		inputField.textField.keyboardType = .emailAddress
+		return inputField
 	}()
 	
-	private lazy var emailTextField: UITextField = {
-		let textField = UITextField()
-		textField.translatesAutoresizingMaskIntoConstraints = false
-		textField.placeholder = "Insira seu email"
-		textField.font = .init(name: "Poppins", size: 16)
-		textField.textAlignment = .center
-		textField.backgroundColor = UIColor(named: "ColorLightGray")
-		textField.layer.cornerRadius = 8
-		textField.layer.shadowOffset = .init(width: 0, height: 2)
-		textField.layer.shadowOpacity = 0.25
-		textField.layer.shadowColor = UIColor(named: "ColorGray")?.cgColor
-		textField.layer.shadowRadius = 0
-		return textField
-	}()
-	
-	private lazy var passwordLabel: UILabel = {
-		let label = UILabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "Senha"
-		label.font = .init(name: "Poppins", size: 16)
-		label.numberOfLines = 0
-		label.textAlignment = .center
-		label.textColor = UIColor(named: "ColorGray")
-		return label
-	}()
-	
-	private lazy var passwordTextField: UITextField = {
-		let textField = UITextField()
-		textField.translatesAutoresizingMaskIntoConstraints = false
-		textField.placeholder = "Crie uma senha"
-		textField.font = .init(name: "Poppins", size: 16)
-		textField.textAlignment = .center
-		textField.backgroundColor = UIColor(named: "ColorLightGray")
-		textField.layer.cornerRadius = 8
-		textField.layer.shadowOffset = .init(width: 0, height: 2)
-		textField.layer.shadowOpacity = 0.25
-		textField.layer.shadowColor = UIColor(named: "ColorGray")?.cgColor
-		textField.layer.shadowRadius = 0
-		textField.rightViewMode = .always
-		return textField
+	private lazy var passwordInputField: LabeledTextField = {
+		return LabeledTextField(title: Constants.passwordLabel, placeholder: "Insira sua senha", isSecureTextEntry: true)
 	}()
 	
 	private lazy var stackView: UIStackView = {
-		let stack = UIStackView(arrangedSubviews: [emailLabel, emailTextField, passwordLabel, passwordTextField])
+		let stack = UIStackView(arrangedSubviews: [emailInputField, passwordInputField])
 		stack.translatesAutoresizingMaskIntoConstraints = false
 		stack.alignment = .fill
 		stack.distribution = .equalSpacing
@@ -111,7 +68,7 @@ class SignInViewController: UIViewController {
 	private lazy var signInButton: UIButton = {
 		let button = UIButton()
 		button.translatesAutoresizingMaskIntoConstraints = false
-		button.setTitle("Entrar", for: .normal)
+		button.setTitle(Constants.signInButtonTitle, for: .normal)
 		button.backgroundColor = UIColor(named: "ColorCoral")
 		button.titleLabel?.font = .init(name: "Poppins-Bold", size: 18)
 		button.layer.cornerRadius = 8
@@ -159,9 +116,6 @@ class SignInViewController: UIViewController {
 			stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
 			stackView.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 32),
 			
-			emailTextField.heightAnchor.constraint(equalToConstant: 48),
-			passwordTextField.heightAnchor.constraint(equalToConstant: 48),
-			
 			signInButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 88),
 			signInButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -88),
 			signInButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 32),
@@ -171,8 +125,8 @@ class SignInViewController: UIViewController {
 	}
 	
 	@objc func signIn() {
-		guard let email = emailTextField.text,
-					let password = passwordTextField.text else { return	}
+		guard let email = emailInputField.textField.text,
+					let password = passwordInputField.textField.text else { return	}
 		
 		print(email, password)
 		

@@ -1,6 +1,6 @@
 # Adopet
 
-Projeto utilizado para aplicar boas práticas de Clean Code através da refatoração do projeto como um todo.
+Projeto da Alura utilizado para treinar a aplicação de boas práticas de Clean Code através da refatoração do projeto como um todo.
 
 ## Técnicas e tecnologias
 
