@@ -44,6 +44,7 @@
 		48C9B3742B7D097C00F16F61 /* PetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48C9B3722B7D097C00F16F61 /* PetTableViewCell.xib */; };
 		48C9B3762B7D3C4400F16F61 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C9B3752B7D3C4400F16F61 /* DataManager.swift */; };
 		48EDD0E92B7D6E9A00CB6228 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EDD0E82B7D6E9A00CB6228 /* UITextField+.swift */; };
+		FE7515DC2E91A3E000268255 /* CreateUserAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7515DB2E91A3E000268255 /* CreateUserAccountModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		48C9B3722B7D097C00F16F61 /* PetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetTableViewCell.xib; sourceTree = "<group>"; };
 		48C9B3752B7D3C4400F16F61 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		48EDD0E82B7D6E9A00CB6228 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		FE7515DB2E91A3E000268255 /* CreateUserAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserAccountModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				48C9B3672B7C204500F16F61 /* Pet.swift */,
+				FE7515DB2E91A3E000268255 /* CreateUserAccountModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				48A900D42B79786F0057616A /* HomeViewController.swift in Sources */,
 				48EDD0E92B7D6E9A00CB6228 /* UITextField+.swift in Sources */,
 				48C9B3732B7D097C00F16F61 /* PetTableViewCell.swift in Sources */,
+				FE7515DC2E91A3E000268255 /* CreateUserAccountModel.swift in Sources */,
 				48C9B3762B7D3C4400F16F61 /* DataManager.swift in Sources */,
 				48A900D02B79786F0057616A /* AppDelegate.swift in Sources */,
 				48941E3C2B83E75E00C2CF86 /* PetDetailsViewController.swift in Sources */,

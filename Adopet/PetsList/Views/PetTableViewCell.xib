@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24128" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -37,13 +38,13 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dunga" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7FB-F3-DnZ">
-                        <rect key="frame" x="172" y="27" width="514" height="25.333333333333329"/>
+                        <rect key="frame" x="172" y="31" width="514" height="25.333333333333329"/>
                         <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="18"/>
                         <color key="textColor" name="ColorBlue"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGj-Bt-w9K">
-                        <rect key="frame" x="172" y="60.333333333333343" width="514" height="59"/>
+                        <rect key="frame" x="172" y="64.333333333333329" width="514" height="59"/>
                         <string key="text">2 anos
 Porte pequeno
 Calmo e educado</string>
@@ -52,7 +53,7 @@ Calmo e educado</string>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rio de Janeiro (RJ)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXo-6u-Kxb">
-                        <rect key="frame" x="172" y="135.33333333333334" width="514" height="17"/>
+                        <rect key="frame" x="172" y="139.33333333333334" width="514" height="17"/>
                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                         <color key="textColor" name="ColorGray"/>
                         <nil key="highlightedColor"/>
@@ -83,11 +84,12 @@ Calmo e educado</string>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="dogDescription" destination="XGj-Bt-w9K" id="vIk-NE-d54"/>
-                <outlet property="dogImg" destination="J4q-EN-tDy" id="6cY-kE-JHZ"/>
+                <outlet property="dogImage" destination="J4q-EN-tDy" id="6cY-kE-JHZ"/>
+                <outlet property="dogImg" destination="J4q-EN-tDy" id="1f0-Fz-c71"/>
                 <outlet property="location" destination="AXo-6u-Kxb" id="1J5-qE-5c2"/>
                 <outlet property="name" destination="7FB-F3-DnZ" id="YH0-XT-KdG"/>
             </connections>
-            <point key="canvasLocation" x="401.52671755725191" y="-9.1549295774647899"/>
+            <point key="canvasLocation" x="32" y="-3"/>
         </tableViewCell>
     </objects>
     <resources>
