@@ -42,9 +42,14 @@
 		48C9B3682B7C204500F16F61 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C9B3672B7C204500F16F61 /* Pet.swift */; };
 		48C9B3732B7D097C00F16F61 /* PetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C9B3712B7D097C00F16F61 /* PetTableViewCell.swift */; };
 		48C9B3742B7D097C00F16F61 /* PetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48C9B3722B7D097C00F16F61 /* PetTableViewCell.xib */; };
-		48C9B3762B7D3C4400F16F61 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C9B3752B7D3C4400F16F61 /* DataManager.swift */; };
 		48EDD0E92B7D6E9A00CB6228 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EDD0E82B7D6E9A00CB6228 /* UITextField+.swift */; };
 		FE7515DC2E91A3E000268255 /* CreateUserAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7515DB2E91A3E000268255 /* CreateUserAccountModel.swift */; };
+		FEF80B8E2E946A2E003866B3 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF80B8D2E946A2E003866B3 /* UserManager.swift */; };
+		FEF80B902E946A61003866B3 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF80B8F2E946A61003866B3 /* AuthenticationManager.swift */; };
+		FEF80B922E946B3C003866B3 /* PetsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF80B912E946B3C003866B3 /* PetsDataService.swift */; };
+		FEF80B942E946BBF003866B3 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF80B932E946BBF003866B3 /* ImageDownloader.swift */; };
+		FEF80B962E946ECC003866B3 /* ExternalLinksHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF80B952E946ECC003866B3 /* ExternalLinksHandler.swift */; };
+		FEF80B9A2E947F18003866B3 /* URLHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF80B992E947F18003866B3 /* URLHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,9 +109,14 @@
 		48C9B3672B7C204500F16F61 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		48C9B3712B7D097C00F16F61 /* PetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTableViewCell.swift; sourceTree = "<group>"; };
 		48C9B3722B7D097C00F16F61 /* PetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetTableViewCell.xib; sourceTree = "<group>"; };
-		48C9B3752B7D3C4400F16F61 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		48EDD0E82B7D6E9A00CB6228 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		FE7515DB2E91A3E000268255 /* CreateUserAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserAccountModel.swift; sourceTree = "<group>"; };
+		FEF80B8D2E946A2E003866B3 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		FEF80B8F2E946A61003866B3 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		FEF80B912E946B3C003866B3 /* PetsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsDataService.swift; sourceTree = "<group>"; };
+		FEF80B932E946BBF003866B3 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		FEF80B952E946ECC003866B3 /* ExternalLinksHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalLinksHandler.swift; sourceTree = "<group>"; };
+		FEF80B992E947F18003866B3 /* URLHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -219,7 +229,12 @@
 		48514CF92B88CABB0021AE7E /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				48C9B3752B7D3C4400F16F61 /* DataManager.swift */,
+				FEF80B8F2E946A61003866B3 /* AuthenticationManager.swift */,
+				FEF80B912E946B3C003866B3 /* PetsDataService.swift */,
+				FEF80B932E946BBF003866B3 /* ImageDownloader.swift */,
+				FEF80B8D2E946A2E003866B3 /* UserManager.swift */,
+				FEF80B952E946ECC003866B3 /* ExternalLinksHandler.swift */,
+				FEF80B992E947F18003866B3 /* URLHandler.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -471,14 +486,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEF80B962E946ECC003866B3 /* ExternalLinksHandler.swift in Sources */,
 				48941E422B85275600C2CF86 /* TableHeaderView.swift in Sources */,
 				48C9B3682B7C204500F16F61 /* Pet.swift in Sources */,
 				48A901042B7AB0600057616A /* SignInViewController.swift in Sources */,
+				FEF80B922E946B3C003866B3 /* PetsDataService.swift in Sources */,
 				48A900D42B79786F0057616A /* HomeViewController.swift in Sources */,
+				FEF80B9A2E947F18003866B3 /* URLHandler.swift in Sources */,
+				FEF80B8E2E946A2E003866B3 /* UserManager.swift in Sources */,
+				FEF80B942E946BBF003866B3 /* ImageDownloader.swift in Sources */,
 				48EDD0E92B7D6E9A00CB6228 /* UITextField+.swift in Sources */,
 				48C9B3732B7D097C00F16F61 /* PetTableViewCell.swift in Sources */,
 				FE7515DC2E91A3E000268255 /* CreateUserAccountModel.swift in Sources */,
-				48C9B3762B7D3C4400F16F61 /* DataManager.swift in Sources */,
+				FEF80B902E946A61003866B3 /* AuthenticationManager.swift in Sources */,
 				48A900D02B79786F0057616A /* AppDelegate.swift in Sources */,
 				48941E3C2B83E75E00C2CF86 /* PetDetailsViewController.swift in Sources */,
 				48A900D22B79786F0057616A /* SceneDelegate.swift in Sources */,
