@@ -50,6 +50,7 @@
 		FEF80B942E946BBF003866B3 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF80B932E946BBF003866B3 /* ImageDownloader.swift */; };
 		FEF80B962E946ECC003866B3 /* ExternalLinksHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF80B952E946ECC003866B3 /* ExternalLinksHandler.swift */; };
 		FEF80B9A2E947F18003866B3 /* URLHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF80B992E947F18003866B3 /* URLHandler.swift */; };
+		FEF80B9E2E95F584003866B3 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF80B9D2E95F584003866B3 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		FEF80B932E946BBF003866B3 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		FEF80B952E946ECC003866B3 /* ExternalLinksHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalLinksHandler.swift; sourceTree = "<group>"; };
 		FEF80B992E947F18003866B3 /* URLHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLHandler.swift; sourceTree = "<group>"; };
+		FEF80B9D2E95F584003866B3 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -231,6 +233,7 @@
 			children = (
 				FEF80B8F2E946A61003866B3 /* AuthenticationManager.swift */,
 				FEF80B912E946B3C003866B3 /* PetsDataService.swift */,
+				FEF80B9D2E95F584003866B3 /* NetworkService.swift */,
 				FEF80B932E946BBF003866B3 /* ImageDownloader.swift */,
 				FEF80B8D2E946A2E003866B3 /* UserManager.swift */,
 				FEF80B952E946ECC003866B3 /* ExternalLinksHandler.swift */,
@@ -497,6 +500,7 @@
 				FEF80B942E946BBF003866B3 /* ImageDownloader.swift in Sources */,
 				48EDD0E92B7D6E9A00CB6228 /* UITextField+.swift in Sources */,
 				48C9B3732B7D097C00F16F61 /* PetTableViewCell.swift in Sources */,
+				FEF80B9E2E95F584003866B3 /* NetworkService.swift in Sources */,
 				FE7515DC2E91A3E000268255 /* CreateUserAccountModel.swift in Sources */,
 				FEF80B902E946A61003866B3 /* AuthenticationManager.swift in Sources */,
 				48A900D02B79786F0057616A /* AppDelegate.swift in Sources */,
