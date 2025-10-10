@@ -21,7 +21,7 @@ class HomeViewController: UIViewController {
 
 
     @IBAction func signIn(_ sender: Any) {
-        navigationController?.pushViewController(SignInViewController(), animated: true)
+        navigationController?.pushViewController(SignInViewController(authenticationManager: GoogleAuthenticationProvider()), animated: true)
     }
     
     

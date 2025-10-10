@@ -169,7 +169,7 @@ class SignUpViewController: UIViewController {
 		
 		userManager.saveUser(userData: userData)
 		
-		navigationController?.pushViewController(SignInViewController(), animated: true)
+		navigationController?.pushViewController(SignInViewController(authenticationManager: GoogleAuthenticationProvider()), animated: true)
 	}
 	
 	@objc

@@ -9,7 +9,16 @@ import UIKit
 
 class SignInViewController: UIViewController {
 	
-	private var authenticationManager: AuthenticationProvider = GoogleAuthenticationProvider()
+	private var authenticationManager: AuthenticationProvider
+	
+	init(authenticationManager: AuthenticationProvider) {
+		self.authenticationManager = authenticationManager
+		super.init(nibName: nil, bundle: nil)
+	}
+	
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 	
 	private lazy var pawsImageView: UIImageView = {
 		let imageView = UIImageView(image: UIImage(named: "paws"))
